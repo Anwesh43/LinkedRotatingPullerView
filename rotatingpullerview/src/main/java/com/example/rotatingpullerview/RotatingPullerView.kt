@@ -19,12 +19,12 @@ val colors : Array<Int> = arrayOf(
     Color.parseColor(it)
 }.toTypedArray()
 val parts : Int = 4
-val scGap : Float = 0.02f / parts
+val scGap : Float = 0.018f / parts
 val delay : Long = 20
 val strokeFactor : Float = 90f
 val backColor : Int = Color.parseColor("#BDBDBD")
 val blockFactor : Float = 9.2f
-val hFactor : Float = 4.9f
+val hFactor : Float = 2.3f
 
 fun Int.inverse() : Float = 1f / this
 fun Float.maxScale(i : Int, n : Int) : Float = Math.max(0f, this - i * n.inverse())

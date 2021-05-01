@@ -1,0 +1,3 @@
+include ':rotatingpullerview'
+include ':app'
+rootProject.name = "LinkedRotatingPullerView"

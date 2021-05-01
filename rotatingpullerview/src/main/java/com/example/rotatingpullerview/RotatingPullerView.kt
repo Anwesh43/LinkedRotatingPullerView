@@ -188,4 +188,27 @@ class RotatingPullerView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : RotatingPullerView) {
+
+        private val rp : RotatingPuller = RotatingPuller(0)
+        private val animator : Animator = Animator(view)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            rp.draw(canvas, paint)
+            animator.animate {
+                rp.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            rp.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }

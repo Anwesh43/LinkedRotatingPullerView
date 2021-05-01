@@ -212,4 +212,13 @@ class RotatingPullerView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : RotatingPullerView {
+            val view : RotatingPullerView  = RotatingPullerView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
